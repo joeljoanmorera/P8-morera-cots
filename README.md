@@ -4,7 +4,7 @@
 
 ###### **Funcionamiento**
 
-Paragraph
+Hulaaa m'agradaria fer aquesta part si no et sap greu, així faig algo i no em sento un inútil. La intentaré fer avui al vespre.
 
 ###### **Código del programa**
 
