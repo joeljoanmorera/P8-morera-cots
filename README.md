@@ -15,18 +15,22 @@ En este ejercicio se implementa un bucle de comunicación entre el puerto serie 
 ```cpp
 #include <Arduino.h>
 
-void setup()
-{
-    Serial.begin(115200);
-    Serial2.begin(115200);
-}
+void setup() {
+  Serial.begin(115200);
+  Serial2.begin(115200);
 
-void loop()
-{
-    if (Serial2.available())
-    {
-        Serial.write(Serial2.read());
-    }
+void loop() {
+  // Redirige los datos de UART0 a UART2
+  if(Serial.available()) {
+    char c = Serial.read();
+    Serial2.write(c);
+  }
+
+  // Redirige los datos de UART2 a UART0
+  if(Serial2.available()) {
+    char c = Serial2.read();
+    Serial.write(c);
+  }
 }
 ```
 
