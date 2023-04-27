@@ -29,28 +29,33 @@ En este ejercicio se implementa un bucle de comunicación entre el puerto serie 
 
 ###### **Código del programa**
 
-(**Provional**)
-
 ```cpp
 #include <Arduino.h>
+#include <HardwareSerial.h>
+
+
+
 
 void setup() {
   Serial.begin(115200);
-  Serial2.begin(115200);
+  Serial2.begin(115200); 
+  uint8_t e = 1;
+  Serial2.write(e);
+}
 
 void loop() {
-  // Redirige los datos de UART0 a UART2
-  if(Serial.available()) {
-    char c = Serial.read();
-    Serial2.write(c);
+ 
+  if(Serial2.available()>0) {
+    uint8_t c = Serial2.read();
+    Serial.println(c);
+    Serial2.write(c+1);
+    
   }
+ 
 
-  // Redirige los datos de UART2 a UART0
-  if(Serial2.available()) {
-    char c = Serial2.read();
-    Serial.write(c);
-  }
+    delay(1000);
 }
+
 ```
 
 ###### **Salida del puerto serie**
@@ -58,6 +63,11 @@ void loop() {
 En la salida del puerto serie se puede observar como se reciben los datos que se envían por el puerto serie 2.
 
 ```
+1
+2
+3
+4
+...
 ```
 
 ***
