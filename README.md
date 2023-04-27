@@ -1,5 +1,24 @@
 # Práctica 8. Gerard Cots y Joel J. Morera
 
+## Estandares de comunicación RS232, RS485 y RS422
+
+RS232, RS485 y RS422 son estándares de comunicación serial utilizados para la transmisión de datos en una variedad de dispositivos electrónicos.
+
+RS232 es un estándar de comunicación serial que transmite datos en un solo hilo. Es comúnmente utilizado para conectar dispositivos periféricos a una computadora, como módems, impresoras y scanners. RS232 utiliza un protocolo de comunicación asincrónico, lo que significa que no hay una señal de reloj de sincronización que se transmita junto con los datos.
+
+RS485 y RS422 son estándares de comunicación serial diferencial, lo que significa que utilizan dos hilos para la transmisión de datos. A diferencia de RS232, estos estándares pueden transmitir datos a largas distancias (hasta 1200 metros) y a una velocidad máxima de 10 Mbps para RS485 y 10 Mbps para RS422.
+
+RS485 utiliza un esquema de comunicación de tipo maestro/esclavo, lo que significa que un dispositivo maestro controla la comunicación con varios dispositivos esclavos. RS422, por otro lado, utiliza un esquema de comunicación de tipo punto a punto o multipunto, lo que significa que un dispositivo puede comunicarse directamente con otro dispositivo o con varios dispositivos.
+
+En resumen, RS232 es adecuado para la comunicación a corta distancia entre dispositivos periféricos y una computadora, mientras que RS485 y RS422 son más adecuados para la comunicación a larga distancia y entre dispositivos industriales y sistemas de control.
+
+### Funciones principales de la API Serial
+#### if(Serial)
+Indica si el puerto des Seria seleccionado está libre.
+#### avaible()
+Nos da el numero de bytes disponibles para leer del puerto. Són datos almacenados en el buffer del receptor serial (64 bytes).
+#### availableForWrite()
+Nos da el número de bytes disponibles para escribir en el buffer del serial sin bloquear la operación escritura.
 ## Ejercicio practico 1 : Bucle de comuniación UART2
 
 ###### **Funcionamiento**
